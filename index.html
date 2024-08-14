@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/CSS/style.css">
+    <link rel="stylesheet" href="dist/CSS/index.css">
+		<title>CRUD Project | Yousief Sameh</title>
+	</head>
+	<body class="bg-bgColor text-white font-MainFont">
+    <div class="crud w-80% mx-auto">
+      <div class="head text-center uppercase my-3 mx-0">
+        <h2 class="text-3xl font-bold mb-2">crud</h2>
+        <p>Product Managment System</p>
+      </div>
+      <div class="inputs">
+        <input class="w-full h-8 outline-none border-0 bg-bgInput my-1 rounded-sm p-3 text-white transition-all hover:scale-105 focus:bg-black" type="text" id="title" placeholder="Title">
+        <div class="price">
+          <input onkeyup="getTotal()" class="w-1/8 h-8 outline-none border-0 bg-bgInput my-1 rounded-sm p-3 text-white transition-all hover:scale-105 focus:bg-black" type="number" id="price" placeholder="Price">
+          <input onkeyup="getTotal()" class="w-1/8 h-8 outline-none border-0 bg-bgInput my-1 rounded-sm p-3 text-white transition-all hover:scale-105 focus:bg-black" type="number" id="taxes" placeholder="Taxes">
+          <input onkeyup="getTotal()" class="w-1/8 h-8 outline-none border-0 bg-bgInput my-1 rounded-sm p-3 text-white transition-all hover:scale-105 focus:bg-black" type="number" id="ads" placeholder="Ads">
+          <input onkeyup="getTotal()" class="w-1/8 h-8 outline-none border-0 bg-bgInput my-1 rounded-sm p-3 text-white transition-all hover:scale-105 focus:bg-black" type="number" id="discount" placeholder="Discount">
+          <small id="total" class="bg-bgTotal p-2 rounded-lg"></small>
+        </div>
+        <input class="w-full h-8 outline-none border-0 bg-bgInput my-1 rounded-sm p-3 text-white transition-all hover:scale-105 focus:bg-black" type="number" id="count" placeholder="Count">
+        <input class="w-full h-8 outline-none border-0 bg-bgInput my-1 rounded-sm p-3 text-white transition-all hover:scale-105 focus:bg-black" type="text" id="category" placeholder="Category">
+        <button id="submit">Create</button>
+      </div>
+      <div class="outputs">
+        <div class="search">
+          <input type="text" onkeyup="SearchOnData(this.value);" id="search" class="w-full h-8 outline-none border-0 bg-bgInput my-1 rounded-sm p-3 text-white transition-all hover:scale-105 focus:bg-black" placeholder="Search">
+          <div class="btnSearch flex justify-between">
+            <button id="searchTitle" onclick="getSearchMood(this.id);" class="w-45%">Search By Title</button>
+            <button id="searchCategory" onclick="getSearchMood(this.id);" class="w-45%">Search By Category</button>
+          </div>
+        </div>
+        <table class="w-full text-center my-2.5">
+          <thead class="uppercase">
+            <tr>
+              <th>id</th>
+              <th>title</th>
+              <th>price</th>
+              <th>taxes</th>
+              <th>ads</th>
+              <th>discount</th>
+              <th>total</th>
+              <th>category</th>
+              <th>update</th>
+              <th>delete</th>
+            </tr>
+          </thead>
+          <div id="deleteAll"></div>
+          <tbody id="tbody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="dist/JS/index.js"></script>
+  </body>
+</html>
